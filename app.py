@@ -4,6 +4,7 @@ from frames.Home import Home
 from frames.RegisterShipment import RegisterShipment
 from frames.ShipmentControl import ShipmentControl
 from frames.Shipments import Shipments
+from lib.AppController import AppController
 
 
 class App(customtkinter.CTk):
@@ -20,21 +21,14 @@ class App(customtkinter.CTk):
         self.container.grid_columnconfigure(0, weight=1)
         self.container.grid_rowconfigure(0, weight=1)
 
-        self.frames = {}
+        self.controller = AppController(self.container)
+        self.controller.show_frame(Home)
 
-        for F in (Home, RegisterShipment, Shipments):
-            frame = F(self.container, self)
-            self.frames[F] = frame
-            frame.grid(row=0, column=0, sticky="nsew")
-
-        print(self.frames)
-        self.show_frame(Home)
-
-    def show_frame(self, frame_class):
-        frame = self.frames[frame_class]
-        if hasattr(frame, "refresh_data"):
-            frame.refresh_data()
-        frame.tkraise()
+    # def show_frame(self, frame_class):
+    #     frame = self.frames[frame_class]
+    #     if hasattr(frame, "refresh_data"):
+    #         frame.refresh_data()
+    #     frame.tkraise()
 
 
 if __name__ == "__main__":

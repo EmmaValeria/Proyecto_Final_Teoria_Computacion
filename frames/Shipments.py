@@ -94,6 +94,7 @@ class Shipments(customtkinter.CTkFrame):
                 text="Acciones",
                 width=150,
                 height=40,
+                command=lambda: self.show_actions(shipment),
             )
             actions.grid(row=row, column=5, pady=5)
 
@@ -119,3 +120,10 @@ class Shipments(customtkinter.CTkFrame):
             self.shipments = []
 
         self.populate_table()
+
+    def show_actions(self, shipment):
+        self.controller.set_shipment(shipment)
+
+        self.controller.frames[self._get_shipment_control()].display_data()
+
+        self.controller.show_frame(self._get_shipment_control())
