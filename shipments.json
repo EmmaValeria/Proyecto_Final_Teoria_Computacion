@@ -1,0 +1,44 @@
+[
+    {
+        "origin": "La Paz",
+        "destination": "Guadalajara",
+        "weight": 34.7,
+        "current_state": "Pedido registrado",
+        "tracking_number": "0000001"
+    },
+    {
+        "origin": "Hermosillo",
+        "destination": "Ciudad de Mexico",
+        "weight": 15.5,
+        "current_state": "Pedido registrado",
+        "tracking_number": "0000001"
+    },
+    {
+        "origin": "Chihuahua",
+        "destination": "Los Cabos",
+        "weight": 7.0,
+        "current_state": "Pedido registrado",
+        "tracking_number": "0000001"
+    },
+    {
+        "origin": "Loreto",
+        "destination": "Aguascalientes",
+        "weight": 8.0,
+        "current_state": "Pedido registrado",
+        "tracking_number": "0000001"
+    },
+    {
+        "origin": "Mazatlan",
+        "destination": "Tijuana",
+        "weight": 29.0,
+        "current_state": "Pedido registrado",
+        "tracking_number": "0000001"
+    },
+    {
+        "origin": "Ensenada",
+        "destination": "Cd. Constitucion",
+        "weight": 40.0,
+        "current_state": "Pedido registrado",
+        "tracking_number": "0000001"
+    }
+]
