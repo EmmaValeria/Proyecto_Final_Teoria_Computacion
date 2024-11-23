@@ -1,21 +1,21 @@
 NT = "X"  # No Transition
 INTERNATIONAL = "I"
-
-STATES = [
-    "Pedido registrado",
-    "Pedido Procesado",
-    "En preparación",
-    "Enviado",
-    "En tránsito",
-    "En aduana",
-    "En reparto",
-    "Entregado",
-    "Intento fallido de entrega",
-    "Cancelado",
-    "Devuelto",
-    "Problema detectado",
-    "Problema detectado",
-]
+REJECT_STATES = ["Cancelado", "Devuelto", "Problema Envio", "Problema Entrega"]
+STATES = {
+    "Pedido registrado": 0,
+    "Pedido Procesado": 1,
+    "En preparación": 2,
+    "Enviado": 3,
+    "En transito": 4,
+    "En aduana": 5,
+    "En reparto": 6,
+    "Entregado": 7,
+    "Intento fallido de entrega": 8,
+    "Cancelado": 9,
+    "Devuelto": 10,
+    "Problema Envio": 11,
+    "Problema Entrega": 12,
+}
 
 AUTOMATON = [
     [NT, True, NT, NT, NT, NT, NT, NT, NT, False, NT, NT, NT],
@@ -24,7 +24,7 @@ AUTOMATON = [
     [NT, NT, NT, NT, True, NT, NT, NT, NT, NT, NT, False, NT],
     [NT, NT, NT, NT, NT, INTERNATIONAL, True, NT, NT, NT, NT, NT, False],
     [NT, NT, NT, NT, NT, NT, True, NT, NT, NT, NT, NT, NT],
-    [NT, NT, NT, NT, NT, NT, NT, True, NT, NT, NT, NT, NT],
+    [NT, NT, NT, NT, NT, NT, NT, True, False, NT, NT, NT, NT],
     [NT, NT, NT, NT, NT, NT, NT, NT, NT, NT, NT, NT, NT],
     [NT, NT, NT, NT, NT, NT, True, NT, NT, NT, False, NT, NT],
     [NT, NT, NT, NT, NT, NT, NT, NT, NT, NT, NT, NT, NT],

@@ -44,7 +44,7 @@ class RegisterShipment(customtkinter.CTkFrame):
         origin = self.origin_entry.get()
         destination = self.destination_entry.get()
         weight = float(self.weight_entry.get())
-        current_state = STATES[0]
+        current_state = "Pedido registrado"
 
         shipment = Shipment(origin, destination, weight, current_state)
         try:

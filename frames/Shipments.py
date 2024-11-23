@@ -94,7 +94,7 @@ class Shipments(customtkinter.CTkFrame):
                 text="Acciones",
                 width=150,
                 height=40,
-                command=lambda: self.show_actions(shipment),
+                command=lambda s=shipment: self.show_actions(s),
             )
             actions.grid(row=row, column=5, pady=5)
 
