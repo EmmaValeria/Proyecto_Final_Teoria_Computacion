@@ -117,6 +117,10 @@ class Shipments(customtkinter.CTkFrame):
                 self.shipments = json.load(file)
                 file.close()
         except FileNotFoundError:
+            error_message = customtkinter.CTkLabel(
+                self.data_frame, text="No hay envios registrados"
+            )
+            error_message.grid(row=2, column=0, columnspan=6)
             self.shipments = []
 
         self.populate_table()

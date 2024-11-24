@@ -2,6 +2,7 @@ from frames.Home import Home
 from frames.RegisterShipment import RegisterShipment
 from frames.ShipmentControl import ShipmentControl
 from frames.Shipments import Shipments
+from frames.TrackShipment import TrackShipment
 
 
 class AppController:
@@ -10,7 +11,7 @@ class AppController:
         self.container = container
         self.frames = {}
 
-        for F in (Home, RegisterShipment, Shipments, ShipmentControl):
+        for F in (Home, RegisterShipment, Shipments, ShipmentControl, TrackShipment):
             frame = F(self.container, self)
             self.frames[F] = frame
             frame.grid(row=0, column=0, sticky="nsew")
